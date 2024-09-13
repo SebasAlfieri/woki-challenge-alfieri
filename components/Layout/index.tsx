@@ -1,25 +1,23 @@
 import React, { FC, ReactNode } from "react";
-import { motion } from "framer-motion";
 import { Footer, NavBar } from "@/components";
-import { Bebas_Neue } from "@next/font/google";
-
-export interface LayoutProps {
-  children: ReactNode;
-}
+import { Bebas_Neue } from "next/font/google";
 
 const bebasNeue = Bebas_Neue({
   weight: "400",
   subsets: ["latin"],
   variable: "--f-bebas-neue",
 });
+export interface LayoutProps {
+  children: ReactNode;
+}
 
 const Layout: FC<LayoutProps> = ({ children }) => {
   return (
-    <motion.main className={`${bebasNeue.variable}`}>
+    <body className={`${bebasNeue.variable}`}>
       <NavBar />
-      <motion.main>{children}</motion.main>
+      <main>{children}</main>
       <Footer />
-    </motion.main>
+    </body>
   );
 };
 
