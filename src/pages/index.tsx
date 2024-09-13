@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import "tailwindcss/tailwind.css";
 import { HomePageContainer } from "@/containers";
 import { HomePageProps } from "@/types/model";
@@ -7,7 +7,12 @@ import { useAppDispatch } from "@/redux/hooks";
 
 const HomePage: FC<HomePageProps> = ({ data }) => {
   const dispatch = useAppDispatch();
-  dispatch(setMovies(data));
+
+  useEffect(() => {
+    if (data) {
+      dispatch(setMovies(data));
+    }
+  }, [data, dispatch]);
 
   return <>{data ? <HomePageContainer /> : <p>Error loading data</p>}</>;
 };

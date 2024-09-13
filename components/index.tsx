@@ -5,5 +5,6 @@ export { default as SimilarMovies } from "./SimilarMovies";
 export { default as MovieItem } from "./MovieItem";
 export { default as MovieDetails } from "./MovieDetails";
 export { default as AccountCreation } from "./AccountCreation";
+export { default as SavedMovies } from "./SavedMovies";
 export { default as Footer } from "./Footer";
 export { default as Layout } from "./Layout";

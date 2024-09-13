@@ -16,6 +16,7 @@ export interface MovieProps {
 }
 
 export interface MovieDetailsProps {
+  id: number;
   poster: string;
   background: string;
   title: string;

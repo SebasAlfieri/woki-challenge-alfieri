@@ -12,8 +12,6 @@ function Gallery({ moviesDataGallery }: GalleryProps) {
     (state) => state.moviesStorage.searchQuery
   );
 
-  console.log("aaaa", moviesDataGallery);
-
   const filteredMovies = moviesDataGallery.filter((item: MovieProps) =>
     item.original_title.toLowerCase().includes(searchQuery.toLowerCase())
   );
@@ -25,7 +23,7 @@ function Gallery({ moviesDataGallery }: GalleryProps) {
   return (
     <section
       className={
-        "bg-charcoal flex justify-center bg-white relative flex-col bg-black pb-20"
+        "bg-charcoal flex justify-center bg-white relative flex-col bg-black pb-20 "
       }
     >
       <nav className="w-full h-[50px] sm:h-20 bg-darkBlue sticky top-0 z-20 flex mb-10 sm:mb-50px">

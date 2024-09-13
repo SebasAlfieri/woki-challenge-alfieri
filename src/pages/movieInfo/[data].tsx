@@ -6,6 +6,7 @@ import { MovieDetailContainer } from "@/containers";
 
 const MovieInfoPage: FC<HomePageProps> = ({ data }) => {
   const dispatch = useAppDispatch();
+
   useEffect(() => {
     if (data) {
       dispatch(setMovies(data));

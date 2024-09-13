@@ -12,7 +12,6 @@ function SimilarMovies({ genres, title }: { genres: number[]; title: string }) {
     return commonGenres.length >= 2 && movie.original_title !== title;
   });
 
-  console.log(similarMovies);
   return (
     <div className={"py-20 text-center overflow-auto"}>
       <h2 className={"text-50px"}>Similar titles</h2>

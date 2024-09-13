@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 function MovieDetailContainer() {
   const movies = useAppSelector((state) => state.moviesStorage.movies);
 
+  // CAMBIAR ROUTER POR ALTERNATIVA
   const router = useRouter();
   const { query } = router;
   const movieDetails = movies.find(
@@ -18,6 +19,7 @@ function MovieDetailContainer() {
   return (
     <main className="mt-200px">
       <MovieDetails
+        id={movieDetails.id}
         poster={`https://image.tmdb.org/t/p/original/${movieDetails.poster_path}`}
         background={`https://image.tmdb.org/t/p/w500/${movieDetails.backdrop_path}`}
         title={movieDetails.title}
