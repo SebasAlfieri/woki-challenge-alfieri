@@ -1,5 +1,5 @@
 import React, { FC, ReactNode } from "react";
-import { Footer, NavBar } from "@/components";
+import { AccountCreation, Footer, NavBar } from "@/components";
 import { Bebas_Neue } from "next/font/google";
 
 const bebasNeue = Bebas_Neue({
@@ -16,6 +16,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
     <main className={`${bebasNeue.variable}`}>
       <NavBar />
       <section>{children}</section>
+      <AccountCreation />
       <Footer />
     </main>
   );
