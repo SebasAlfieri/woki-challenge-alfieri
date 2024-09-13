@@ -1,17 +1,9 @@
-import { useGetMoviesQuery } from "@/redux/services/api";
 import { Gallery, Hero } from "@/components";
 import "tailwindcss/tailwind.css";
+import { useAppSelector } from "@/redux/hooks";
 
 function HomePageContainer() {
-  const { data: movies, error, isLoading } = useGetMoviesQuery(undefined);
-
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>Error: {error.toString()}</div>;
-  }
+  const movies = useAppSelector((state) => state.moviesStorage.movies);
 
   return (
     <main>

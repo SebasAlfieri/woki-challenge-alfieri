@@ -7,7 +7,9 @@ import { MovieProps } from "@/types/model";
 import { GalleryProps } from "@/types/model";
 
 function Gallery({ moviesDataGallery }: GalleryProps) {
-  const searchQuery = useAppSelector((state) => state.movies.searchQuery);
+  const searchQuery = useAppSelector(
+    (state) => state.moviesStorage.searchQuery
+  );
 
   const filteredMovies = moviesDataGallery.filter((item: MovieProps) =>
     item.original_title.toLowerCase().includes(searchQuery.toLowerCase())

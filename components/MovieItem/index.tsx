@@ -45,7 +45,7 @@ function MovieItem({
           },
         }}
         className={
-          "absolute bottom-0 h-20 w-full shadow-custom-inset text-white text-30px leading-none p-10px"
+          "absolute bottom-0 h-20 w-full shadow-custom-inset text-white text-30px leading-none p-10px overflow-scroll"
         }
       >
         <p>{title}</p>

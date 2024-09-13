@@ -6,7 +6,7 @@ import { setupListeners } from "@reduxjs/toolkit/query";
 export const store = configureStore({
   reducer: {
     [moviesApi.reducerPath]: moviesApi.reducer,
-    movies: moviesReducer,
+    moviesStorage: moviesReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(moviesApi.middleware),

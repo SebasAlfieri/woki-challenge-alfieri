@@ -28,19 +28,19 @@ const MovieInfoPage: FC<HomePageProps> = ({ data }) => {
         description={movieDetails.overview}
         valuation={movieDetails.vote_average.toString().slice(0, 3)}
       />
+
       <Gallery moviesDataGallery={data} />
     </main>
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const state = store.getState().movies.movies;
+export const getServerSideProps: GetServerSideProps = async () => {
+  const state = store.getState().moviesStorage.movies;
 
-  // Verifica si el estado ya tiene datos
   if (state.length > 0) {
     return {
       props: {
-        data: state, // Retorna los datos existentes
+        data: state,
       },
     };
   }
@@ -52,7 +52,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     );
     const data = response.data.results;
 
-    // Guarda los datos en Redux para que estén disponibles en otras partes de la aplicación
     store.dispatch(setMovies(data));
 
     return {

@@ -13,19 +13,11 @@ const HomePage: FC<HomePageProps> = ({ data }) => {
 
   dispatch(setMovies(data));
 
-  return (
-    <>
-      {data ? (
-        <HomePageContainer moviesData={data} />
-      ) : (
-        <p>Error loading data</p>
-      )}
-    </>
-  );
+  return <>{data ? <HomePageContainer /> : <p>Error loading data</p>}</>;
 };
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const state = store.getState().movies.movies;
+  const state = store.getState().moviesStorage.movies;
 
   if (state.length > 0) {
     return {
