@@ -62,7 +62,7 @@ function Hero({ featuredMovie }: HeroProps) {
                 },
               }}
             >
-              {/* ⭐{featuredMovie.vote_average.toString().slice(0, 3)} */}
+              ⭐{featuredMovie.vote_average.toString().slice(0, 3)}
             </motion.span>
           </motion.h1>
           <div className="block w-full h-full absolute top-0 shadow-custom-inset" />

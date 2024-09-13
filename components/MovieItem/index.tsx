@@ -8,17 +8,17 @@ function MovieItem({
   id,
   image,
   title,
-}: // valuation
-{
+  valuation,
+}: {
   id: number;
   image: string;
   title: string;
-  // valuation: string;
+  valuation: string;
 }) {
   const router = useRouter();
 
   const handleClick = () => {
-    router.push(`/movie/${title}`); // Navega a la página /movie/${title}
+    router.push(`/movieInfo/${title}`);
   };
 
   return (
@@ -27,7 +27,7 @@ function MovieItem({
       key={id}
       whileHover={{ scale: 1.05 }}
       className={
-        "rounded-lg bg-charcoal overflow-hidden relative w-200px h-300px"
+        "rounded-lg bg-charcoal overflow-hidden relative w-200px h-300px cursor-pointer"
       }
     >
       <Image
@@ -51,6 +51,7 @@ function MovieItem({
       >
         <p>{title}</p>
       </motion.div>
+      <p className={"absolute top-5px right-10px text-white"}>⭐{valuation}</p>
     </motion.article>
   );
 }

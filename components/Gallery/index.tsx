@@ -27,7 +27,7 @@ function Gallery({ moviesDataGallery }: GalleryProps) {
             id={item.id}
             image={item.poster_path}
             title={item.original_title}
-            // valuation={item.vote_average.toString().slice(0, 3)}
+            valuation={item.vote_average.toString().slice(0, 3)}
           />
         ))}
       </div>

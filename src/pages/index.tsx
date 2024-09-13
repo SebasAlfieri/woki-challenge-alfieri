@@ -6,7 +6,7 @@ import { HomePageContainer } from "@/containers";
 import { HomePageProps } from "@/types/model";
 
 const HomePage: FC<HomePageProps> = ({ data }) => {
-  console.log("funciono", data);
+  // console.log("funca", data);
   return (
     <>
       {data ? (
