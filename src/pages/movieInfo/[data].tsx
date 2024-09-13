@@ -1,9 +1,7 @@
-import { useEffect, FC } from "react";
+import { FC } from "react";
 import { GetServerSideProps } from "next";
 import { useRouter } from "next/router";
 import axios from "axios";
-import { useAppSelector, useAppDispatch } from "@/redux/hooks";
-import { RootState } from "@/redux/store";
 import { HomePageProps } from "@/types/model";
 import { Gallery, MovieDetails } from "@/components";
 
@@ -23,16 +21,16 @@ const MovieInfoPage: FC<HomePageProps> = ({ data }) => {
   console.log(movieDetails);
 
   return (
-    <div className="mt-200px">
+    <main className="mt-200px">
       <MovieDetails
         poster={`https://image.tmdb.org/t/p/original/${movieDetails.poster_path}`}
-        background={`https://image.tmdb.org/t/p/original/${movieDetails.backdrop_path}`}
+        background={`https://image.tmdb.org/t/p/w500/${movieDetails.backdrop_path}`}
         title={movieDetails.title}
         description={movieDetails.overview}
         valuation={movieDetails.vote_average.toString().slice(0, 3)}
       />
       <Gallery moviesDataGallery={data} />
-    </div>
+    </main>
   );
 };
 

@@ -28,15 +28,23 @@ const MovieDetails = ({
           }}
         >
           <Image
-            className="absolute inset-0 object-cover"
-            src={`https://image.tmdb.org/t/p/original/${background}`}
+            className="absolute inset-0 object-cover sm:blur-sm"
+            src={background}
             fill
             alt={"popular"}
             priority
           />
         </motion.div>
+        <Image
+          className="hidden lg:block absolute w-300px h-auto z-10 bg-white  right-140px top-150px lg:top-50px 2xl:top-20"
+          src={poster}
+          width={300}
+          height={500}
+          alt={"popular"}
+          priority
+        />
         <motion.h1
-          className="text-white absolute right-20px sm:right-70px top-30px sm:top-auto sm:bottom-30px text-[35px] sm:text-[60px] leading-none
+          className="text-white absolute left-20px md:left-auto w-fit md:right-70px top-30px md:top-auto md:bottom-30px text-[35px] md:text-[60px] leading-none
             
             z-10"
           initial={{ opacity: 0, y: -10 }}
@@ -74,7 +82,7 @@ const MovieDetails = ({
         </motion.h1>
 
         <motion.p
-          className="text-white absolute left-20px sm:left-70px bottom-30px text-[21.5px] sm:text-[21px] leading-none h-1/2 sm:h-auto sm:w-1/3  overflow-scroll z-10"
+          className="text-white absolute left-20px sm:left-70px bottom-30px sm:bottom-100px text-[21.5px] sm:text-[21px] leading-none h-1/2 sm:h-auto sm:w-1/3  overflow-scroll z-10"
           initial={{ opacity: 0, y: -10 }}
           animate={{
             opacity: 1,
