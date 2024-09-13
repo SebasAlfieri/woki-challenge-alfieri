@@ -1,24 +1,10 @@
-"use client";
-import { useAppDispatch } from "@/redux/hooks";
-import { setSearchQuery } from "@/redux/features/moviesDataBaseSlice";
 import "tailwindcss/tailwind.css";
 import Image from "next/image";
 
 function NavBar() {
-  const dispatch = useAppDispatch();
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch(setSearchQuery(event.target.value));
-  };
-
   return (
-    <header className=" w-full h-[50px] sm:h-20 bg-darkBlue fixed top-0 z-20 flex fixed">
-      <input
-        className="b-red m-auto py-1 px-2 sm:w-[500px]"
-        type="text"
-        placeholder="Search"
-        onChange={handleChange}
-      />
+    <header className="w-full h-[50px] sm:h-20 bg-darkBlue top-0 z-20 flex">
+      <h1 className="b-red m-auto text-white text-30px">WOKI CHALLENGE</h1>
       <button>
         <Image
           className={

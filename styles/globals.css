@@ -14,7 +14,8 @@
   }
 }
 
-body {
+body,
+main {
   font-family: var(--f-bebas-neue);
   scroll-behavior: smooth;
 }
