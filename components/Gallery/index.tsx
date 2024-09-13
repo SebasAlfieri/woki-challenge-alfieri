@@ -17,10 +17,14 @@ function Gallery({ moviesDataGallery }: GalleryProps) {
     >
       <div
         className={
-          "flex  gap-20px justify-center flex-col w-100 bg-orange m-auto sm:w-[1000px] p-[30px] sm:py-[50px] rounded-lg"
+          "flex gap-20px justify-center flex-col w-100 bg-darkBlue m-auto sm:w-[1000px] p-[30px] sm:py-[50px] rounded-lg text-white text-30px"
         }
       >
-        <h2 className="text-center ">AVAILABLE MOVIES</h2>
+        <h2 className="text-center ">
+          {searchQuery === ""
+            ? "AVAILABLE MOVIES"
+            : `RESULTS FOR ${searchQuery}`}{" "}
+        </h2>
         <div className="flex flex-wrap gap-30px justify-center w-full m-auto rounded-lg">
           {filteredMovies.map((item) => (
             <MovieItem

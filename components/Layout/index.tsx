@@ -13,11 +13,11 @@ export interface LayoutProps {
 
 const Layout: FC<LayoutProps> = ({ children }) => {
   return (
-    <body className={`${bebasNeue.variable}`}>
+    <main className={`${bebasNeue.variable}`}>
       <NavBar />
-      <main>{children}</main>
+      <section>{children}</section>
       <Footer />
-    </body>
+    </main>
   );
 };
 
