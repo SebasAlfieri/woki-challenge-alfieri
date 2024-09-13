@@ -5,9 +5,7 @@ import { useAppSelector } from "@/redux/hooks";
 
 function Hero() {
   const router = useRouter();
-  const mostPopular = useAppSelector(
-    (state) => state.moviesStorage.mostPopular
-  );
+  const mostPopular = useAppSelector((state) => state.moviesStorage.movies[1]);
 
   const handleClick = () => {
     router.push(`/movieInfo/${mostPopular?.original_title}`);
