@@ -7,15 +7,16 @@ import { MovieProps } from "@/types/model";
 import { GalleryProps } from "@/types/model";
 
 function Gallery({ moviesDataGallery }: GalleryProps) {
+  const dispatch = useAppDispatch();
   const searchQuery = useAppSelector(
     (state) => state.moviesStorage.searchQuery
   );
 
+  console.log("aaaa", moviesDataGallery);
+
   const filteredMovies = moviesDataGallery.filter((item: MovieProps) =>
     item.original_title.toLowerCase().includes(searchQuery.toLowerCase())
   );
-
-  const dispatch = useAppDispatch();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(setSearchQuery(event.target.value));
