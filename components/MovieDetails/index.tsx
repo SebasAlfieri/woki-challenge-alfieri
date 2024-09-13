@@ -9,8 +9,6 @@ const MovieDetails = ({
   description,
   valuation,
 }: MovieDetailsProps) => {
-  console.log("detail", title);
-
   return (
     <motion.article className="w-full bg-blue h-[300px] sm:h-[600px] 2xl:h-[700px] overflow-hidden flex items-center relative mt-[50px] sm:mt-20">
       <div className="relative w-full h-full">

@@ -3,7 +3,7 @@
 Inicio: 11/9
 Entregado: 13/9
 
-Hice lo que pude con el tiempo dado, gran parte de los días me los ocupo mi trabajo actual.
+Hice lo que pude con el tiempo dado, gran parte de los días me los ocupó mi trabajo actual.
 ¡Estaria muy agradecido de tener un feedback!
 
 # .env.local

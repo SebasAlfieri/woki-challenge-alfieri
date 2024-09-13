@@ -12,13 +12,10 @@ const MovieInfoPage: FC<HomePageProps> = ({ data }) => {
   const movieDetails = data.find(
     (movie) => movie.original_title === query.data
   );
-  console.log("details", movieDetails);
-  console.log(data);
+
   if (!movieDetails) {
     return <div>No movie found</div>;
   }
-
-  console.log(movieDetails);
 
   return (
     <main className="mt-200px">

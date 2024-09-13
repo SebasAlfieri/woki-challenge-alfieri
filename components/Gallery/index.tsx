@@ -11,25 +11,27 @@ function Gallery({ moviesDataGallery }: GalleryProps) {
     item.original_title.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  console.log(filteredMovies);
   return (
     <section
-      className={" p-10 sm:p-20 bg-charcoal flex justify-center bg-white "}
+      className={" p-10 sm:p-20 bg-charcoal flex justify-center bg-white"}
     >
       <div
         className={
-          "flex flex-wrap gap-30px justify-center w-100 bg-orange m-auto sm:w-[1000px] p-[30px] sm:py-[50px] rounded-lg"
+          "flex  gap-20px justify-center flex-col w-100 bg-orange m-auto sm:w-[1000px] p-[30px] sm:py-[50px] rounded-lg"
         }
       >
-        {filteredMovies.map((item) => (
-          <MovieItem
-            key={item.original_title}
-            id={item.id}
-            image={item.poster_path}
-            title={item.original_title}
-            valuation={item.vote_average.toString().slice(0, 3)}
-          />
-        ))}
+        <h2 className="text-center ">AVAILABLE MOVIES</h2>
+        <div className="flex flex-wrap gap-30px justify-center w-full m-auto rounded-lg">
+          {filteredMovies.map((item) => (
+            <MovieItem
+              key={item.original_title}
+              id={item.id}
+              image={item.poster_path}
+              title={item.original_title}
+              valuation={item.vote_average.toString().slice(0, 3)}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
