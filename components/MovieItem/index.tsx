@@ -31,7 +31,7 @@ function MovieItem({
     >
       <Image
         className={"absolute"}
-        src={`https://image.tmdb.org/t/p/original/${image}`}
+        src={`https://image.tmdb.org/t/p/w500/${image}`}
         fill
         alt={`Poster ${title}`}
         sizes="100%"
