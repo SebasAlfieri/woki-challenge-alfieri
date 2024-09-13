@@ -1,19 +1,20 @@
-import { FC } from "react";
-import { GetServerSideProps } from "next";
+import { FC, useEffect } from "react";
 import { useRouter } from "next/router";
-import axios from "axios";
 import { HomePageProps } from "@/types/model";
 import { Gallery, MovieDetails } from "@/components";
-import { store } from "@/redux/store";
 import { setMovies } from "@/redux/features/moviesDataBaseSlice";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 
 const MovieInfoPage: FC<HomePageProps> = ({ data }) => {
+  const movies = useAppSelector((state) => state.moviesStorage.movies);
   const router = useRouter();
   const { query } = router;
 
   const movieDetails = data.find(
     (movie) => movie.original_title === query.data
   );
+
+  console.log(movieDetails);
 
   if (!movieDetails) {
     return <div>No movie found</div>;
@@ -29,43 +30,9 @@ const MovieInfoPage: FC<HomePageProps> = ({ data }) => {
         valuation={movieDetails.vote_average.toString().slice(0, 3)}
       />
 
-      <Gallery moviesDataGallery={data} />
+      <Gallery moviesDataGallery={movies} />
     </main>
   );
-};
-
-export const getServerSideProps: GetServerSideProps = async () => {
-  const state = store.getState().moviesStorage.movies;
-
-  if (state.length > 0) {
-    return {
-      props: {
-        data: state,
-      },
-    };
-  }
-
-  try {
-    const api_key = process.env.NEXT_PUBLIC_API_KEY;
-    const response = await axios.get(
-      `https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&language=en-US&page=1`
-    );
-    const data = response.data.results;
-
-    store.dispatch(setMovies(data));
-
-    return {
-      props: {
-        data,
-      },
-    };
-  } catch (error) {
-    return {
-      props: {
-        data: null,
-      },
-    };
-  }
 };
 
 export default MovieInfoPage;
