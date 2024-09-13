@@ -38,7 +38,7 @@ function Gallery({ moviesDataGallery }: GalleryProps) {
       </nav>
       <div
         className={
-          "flex gap-20px justify-center flex-col w-100 bg-darkBlue m-auto sm:w-[1000px] p-[30px] sm:py-[50px] sm:rounded-lg text-white text-30px"
+          "flex gap-20px justify-center flex-col w-100 bg-darkBlue m-auto lg:w-[1000px] p-[30px] sm:py-[50px] sm:rounded-lg text-white text-30px"
         }
       >
         <h2 className="text-center ">

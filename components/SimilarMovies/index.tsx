@@ -14,9 +14,13 @@ function SimilarMovies({ genres, title }: { genres: number[]; title: string }) {
 
   console.log(similarMovies);
   return (
-    <div className={"py-20 text-center"}>
+    <div className={"py-20 text-center overflow-auto"}>
       <h2 className={"text-50px"}>Similar titles</h2>
-      <div className={"flex gap-30px justify-center"}>
+      <div
+        className={
+          "flex flex-col lg:flex-row gap-60px lg:gap-30px justify-center items-center"
+        }
+      >
         {similarMovies.length > 0 ? (
           similarMovies.slice(0, 4).map((movie) => (
             <div
@@ -29,7 +33,7 @@ function SimilarMovies({ genres, title }: { genres: number[]; title: string }) {
                 fill
                 loading="lazy"
               />
-              {movie.title}
+              <p className="absolute bottom-[-30px]"> {movie.title}</p>
             </div>
           ))
         ) : (
