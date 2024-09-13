@@ -1,5 +1,6 @@
 import { useAppSelector } from "@/redux/hooks";
 import Image from "next/image";
+import Link from "next/link";
 
 function SimilarMovies({ genres, title }: { genres: number[]; title: string }) {
   const movies = useAppSelector((state) => state.moviesStorage.movies);
@@ -22,8 +23,9 @@ function SimilarMovies({ genres, title }: { genres: number[]; title: string }) {
       >
         {similarMovies.length > 0 ? (
           similarMovies.slice(0, 4).map((movie) => (
-            <div
-              key={movie.id}
+            <Link
+              key={`similar${movie.title}`}
+              href={`/movieInfo/${movie.title}`}
               className={"relative w-200px h-300px object-fit"}
             >
               <Image
@@ -33,7 +35,7 @@ function SimilarMovies({ genres, title }: { genres: number[]; title: string }) {
                 loading="lazy"
               />
               <p className="absolute bottom-[-30px]"> {movie.title}</p>
-            </div>
+            </Link>
           ))
         ) : (
           <p>No similar movies found.</p>
